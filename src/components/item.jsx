@@ -4,9 +4,9 @@ import { Slide } from "react-slideshow-image";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "react-slideshow-image/dist/styles.css";
-import { TLAT } from "../../../data/TLAT";
-import Header from "../../../components/Header";
-import Footer from "../../../components/Footer";
+import { TLAT } from "../data/TLAT";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const properties = {
   transitionDuration: 200,

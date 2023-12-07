@@ -9,7 +9,7 @@ import ListProduct from "./pages/user/product/List_product.jsx";
 import Ao_thun from "./pages/user/product/ao_thun.jsx";
 import Baby_tee from "./pages/user/product/baby_tee.jsx";
 import Ao_polo from "./pages/user/product/ao_polo.jsx";
-import Item from "./pages/user/product/item.jsx";
+import Item from "./components/item.jsx";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
