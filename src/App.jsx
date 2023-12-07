@@ -10,6 +10,8 @@ import Ao_thun from "./pages/user/product/ao_thun.jsx";
 import Baby_tee from "./pages/user/product/baby_tee.jsx";
 import Ao_polo from "./pages/user/product/ao_polo.jsx";
 import Item from "./components/item.jsx";
+import HomeAdmin from "./pages/private/pageAdmin/home.jsx";
+// admin remove
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -31,6 +33,7 @@ function App() {
         <Route path="/baby-tee" element={<Baby_tee />}></Route>
         <Route path="/ao-polo" element={<Ao_polo />}></Route>
         <Route path="/kiem-tra-don-hang" element={<Check_order />}></Route>
+        <Route path="/admin" element={<HomeAdmin />}></Route>
         <Route path="/:id" element={<Item />}></Route>
       </Routes>
     </div>
