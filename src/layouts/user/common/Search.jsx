@@ -6,9 +6,7 @@ import Select from "react-select";
 const Search = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.crud.data);
-  console.log(data);
   const [searchText, setSearcText] = useState([]);
-  console.log("searchText :", searchText);
 
   const loadData = () => {
     dispatch(findAllData("products"));
@@ -26,8 +24,8 @@ const Search = () => {
   }, [data]);
 
   const searchOption = searchText.map((province) => ({
-    value: province.id,
-    label: province.name,
+    value: province?.id,
+    label: province?.name,
     // imgSrc: province.img,
   }));
   const formatOptionLabel = ({ value, label }) => (
