@@ -33,7 +33,9 @@ const Banner = () => {
   return (
     <>
       {loading ? (
-        <Skeleton.Image />
+        <div className="flex justify-center">
+          <Skeleton.Image />
+        </div>
       ) : (
         <div className="w-full ">
           <Carousel autoplay>
