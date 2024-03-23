@@ -2,13 +2,24 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { findAllData } from "../../../services/crud.service";
 import { Link } from "react-router-dom";
-import { Skeleton } from "antd";
+import { Skeleton, Space } from "antd";
 
 const NavHeader = ({ dataCate, loading }) => {
   return (
     <>
       {loading ? (
-        <Skeleton.Button />
+        <Space>
+          <Skeleton.Button />
+          <Skeleton.Button />
+          <Skeleton.Button />
+          <Skeleton.Button />
+          <Skeleton.Button />
+          <Skeleton.Button />
+          <Skeleton.Button />
+          <Skeleton.Button />
+          <Skeleton.Button />
+          <Skeleton.Button />
+        </Space>
       ) : (
         dataCate?.map((item, index) => (
           <li key={index} className="">
