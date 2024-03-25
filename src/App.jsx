@@ -13,6 +13,9 @@ import ServiceSecure from "./pages/user/ServiceSecure";
 import ServicePaymentMethods from "./pages/user/ServicePaymentMethods";
 import ServiceShip from "./pages/user/ServiceShip";
 import ServiceReturn from "./pages/user/ServiceReturn";
+import CheckOrder from "./pages/user/CheckOrder";
+import Login from "./pages/user/Login";
+import DashBoard from "./pages/admin/DashBoard";
 
 function App() {
   const location = useLocation();
@@ -39,9 +42,13 @@ function App() {
             element={<ServicePaymentMethods />}
           />
           <Route path="bang-size" element={<TableSize />} />
+          <Route path="kiem-tra-don-hang" element={<CheckOrder />} />
           <Route path="he-thong-cua-hang" element={<System />} />
         </Route>
-        <Route path="/admin" element={<PrivateRouter />}></Route>
+        <Route path="/dang-nhap" element={<Login />} />
+        <Route path="/admin" element={<PrivateRouter />}>
+          <Route index element={<DashBoard />} />
+        </Route>
       </Routes>
     </>
   );
