@@ -5,6 +5,14 @@ import PublicRouter from "./routes/PublicRouter";
 import PrivateRouter from "./routes/PrivateRouter";
 import Home from "./pages/user/Home";
 import NotFound from "./pages/user/NotFound";
+import ServiceChange from "./pages/user/ServiceChange";
+import TableSize from "./pages/user/TableSize";
+import System from "./pages/user/System";
+import ServiceBuy from "./pages/user/ServiceBuy";
+import ServiceSecure from "./pages/user/ServiceSecure";
+import ServicePaymentMethods from "./pages/user/ServicePaymentMethods";
+import ServiceShip from "./pages/user/ServiceShip";
+import ServiceReturn from "./pages/user/ServiceReturn";
 
 function App() {
   const location = useLocation();
@@ -18,6 +26,20 @@ function App() {
         <Route path="/" element={<PublicRouter />}>
           <Route index element={<Home />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="chinh-sach-doi-tra" element={<ServiceChange />} />
+          <Route path="chinh-sach-mua-hang" element={<ServiceBuy />} />
+          <Route path="chinh-sach-bao-mat" element={<ServiceSecure />} />
+          <Route path="chinh-sach-tra-hang" element={<ServiceReturn />} />
+          <Route
+            path="chinh-sach-giao-nhan-van-chuyen-kiem-hang"
+            element={<ServiceShip />}
+          />
+          <Route
+            path="phuong-thuc-thanh-toan"
+            element={<ServicePaymentMethods />}
+          />
+          <Route path="bang-size" element={<TableSize />} />
+          <Route path="he-thong-cua-hang" element={<System />} />
         </Route>
         <Route path="/admin" element={<PrivateRouter />}></Route>
       </Routes>

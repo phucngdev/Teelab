@@ -31,9 +31,9 @@ export const serviceSecure = {
   path: "/chinh-sach-bao-mat",
   text: "Chính sách bảo mật",
 };
-export const serviceChange = {
-  path: "/chinh-sach-doi-tra",
-  text: "Chính sách đổi trả",
+export const serviceReturn = {
+  path: "/chinh-sach-tra-hang",
+  text: "Chính sách trả hàng",
 };
 export const serviceShip = {
   path: "/chinh-sach-giao-nhan-van-chuyen-kiem-hang",

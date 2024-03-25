@@ -7,7 +7,7 @@ import {
   checkOrder,
   serviceBuy,
   serviceSecure,
-  serviceChange,
+  serviceReturn,
   serviceShip,
   paymentMethods,
 } from "../../../constants/path";
@@ -23,9 +23,9 @@ const Footer = () => {
   const serviceList = [
     serviceBuy,
     serviceSecure,
-    serviceChange,
-    serviceShip,
     paymentMethods,
+    serviceShip,
+    serviceReturn,
   ];
   const platform = [FB, TT, IG, LZD, SP];
   const listRoute = (arr) =>
@@ -46,7 +46,7 @@ const Footer = () => {
         <div className="container mx-auto flex flex-wrap justify-between py-10 text-[#999]">
           <div className="w-full md:w-full lg:w-[30%] text-[9px] px-[15px]">
             <img className="mb-[25px]" src={logo_footer} alt="" />
-            <b className="text-sm">HKD Vũ Thị Quỳnh Anh</b>
+            <b className="text-sm">HKD Nguyễn Minh Phúc</b>
             <br />
             Giấy chứng nhận đăng ký HKD số 17A80041952 do Phòng Tài chính - Kế
             hoạch, Uỷ ban nhân dân thành phố Thái Nguyên cấp ngày 30/5/2019{" "}

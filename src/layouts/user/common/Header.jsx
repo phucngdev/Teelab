@@ -17,7 +17,7 @@ const Header = () => {
       <TopHeader />
       <SideBar />
       <div className="hidden md:block container mx-auto">
-        <ul className="flex justify-evenly items-center h-[77px] border-b-[1px] border-solid border-gray-300 md:text-sm lg:text-base">
+        <ul className="flex justify-evenly items-center uppercase h-[77px] border-b-[1px] border-solid border-gray-300 md:text-sm lg:text-base">
           <li>
             <Link to={home.path}>{home.text}</Link>
           </li>

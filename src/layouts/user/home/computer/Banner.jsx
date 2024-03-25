@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { findAllData } from "../../../services/crud.service";
+import { findAllData } from "../../../../services/crud.service";
 import { Carousel, Skeleton } from "antd";
 
 const Banner = () => {
@@ -8,7 +8,7 @@ const Banner = () => {
   const dataBanner = useSelector((state) => state.crud.data);
   const [banner, setBanner] = useState();
   const [loading, setLoading] = useState(true);
-  console.log(banner);
+  console.log("banner", banner);
 
   const loadDataBanner = async () => {
     try {
@@ -30,6 +30,7 @@ const Banner = () => {
       setBanner(arr);
     }
   }, [dataBanner]);
+
   return (
     <>
       {loading ? (
@@ -37,12 +38,15 @@ const Banner = () => {
           <Skeleton.Image />
         </div>
       ) : (
-        <div className="w-full ">
+        <div className="w-[85%] mx-auto">
           <Carousel autoplay>
             {banner?.map((bn, index) => (
-              <div key={index} className="">
-                <img src={bn} alt="" className="w-full h-full object-cover" />
-              </div>
+              <img
+                key={index}
+                src={bn}
+                alt=""
+                className="w-full h-full object-cover"
+              />
             ))}
           </Carousel>
         </div>
