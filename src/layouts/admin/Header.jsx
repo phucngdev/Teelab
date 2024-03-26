@@ -11,8 +11,12 @@ import { useNavigate } from "react-router-dom";
 import Setting from "../../components/admin/Setting";
 import { auth } from "../../firebase/config";
 
-const Header = ({ user }) => {
+const Header = () => {
+  const currentUser = auth.currentUser;
+  const user = currentUser?.providerData;
+
   const navigate = useNavigate();
+  const [userProps, setUserProps] = useState();
   const [open, setOpen] = useState(false);
   const [openUpdateAcc, setOpenUpdateAcc] = useState(false);
   const [openUpdate, setOpenUpdate] = useState(false);
@@ -40,6 +44,9 @@ const Header = ({ user }) => {
   };
   const showDrawer = () => {
     setOpen(true);
+    if (user) {
+      setUserProps(user[0]);
+    }
   };
 
   return (
@@ -60,22 +67,23 @@ const Header = ({ user }) => {
               onClick={showDrawer}
             >
               <div className="w-9 h-9 rounded-full flex justify-center items-center border">
-                {user.photoURL !== "" ? (
+                {user?.photoURL !== "" ? (
                   <img
                     className="w-9 h-9 rounded-full"
-                    src={user.photoURL}
+                    src={user?.photoURL}
                     alt=""
                   />
                 ) : (
                   <UserOutlined />
                 )}
               </div>
-              <span>{user.displayName}</span>
+              <span>
+                {user?.displayName ? user?.displayName : "Quản trị viên"}
+              </span>
             </div>
           </Tooltip>
           <Drawer title="Thông tin tài khoản" onClose={onClose} open={open}>
             <Setting
-              user={user}
               open={open}
               openUpdateAcc={openUpdateAcc}
               openUpdate={openUpdate}
