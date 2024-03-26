@@ -1,9 +1,12 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 const DashBoard = () => {
   return (
     <>
-      <h1>admin</h1>
+      <Helmet>
+        <title>Tổng quan - TEELAB</title>
+      </Helmet>
     </>
   );
 };

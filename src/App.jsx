@@ -16,6 +16,7 @@ import ServiceReturn from "./pages/user/ServiceReturn";
 import CheckOrder from "./pages/user/CheckOrder";
 import Login from "./pages/user/Login";
 import DashBoard from "./pages/admin/DashBoard";
+import NotFoundAdmin from "./pages/admin/NotFound";
 
 function App() {
   const location = useLocation();
@@ -48,6 +49,7 @@ function App() {
         <Route path="/dang-nhap" element={<Login />} />
         <Route path="/admin" element={<PrivateRouter />}>
           <Route index element={<DashBoard />} />
+          <Route path="*" element={<NotFoundAdmin />} />
         </Route>
       </Routes>
     </>

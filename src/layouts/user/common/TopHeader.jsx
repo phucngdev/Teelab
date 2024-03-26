@@ -9,7 +9,7 @@ const TopHeader = () => {
   return (
     <>
       <div className="hidden md:block py-[5px] bg-[#f5f5f5]">
-        <div className="container mx-auto flex justify-end">
+        <div className="container mx-auto flex justify-end items-center">
           <form className="relative h-10 flex items-center">
             <Search />
           </form>

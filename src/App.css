@@ -12,10 +12,10 @@ img {
 li {
   list-style: none;
 }
-.ant-badge-count {
-  top: 10px !important;
-}
 .slick-active button {
   background-color: black !important;
   height: 6px !important;
+}
+.ant-menu-light {
+  border: none !important;
 }
