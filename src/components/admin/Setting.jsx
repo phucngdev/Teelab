@@ -37,9 +37,7 @@ const Setting = ({
     const fetchUserData = async () => {
       try {
         const currentUser = await auth.currentUser;
-        console.log(currentUser);
         const userData = await currentUser?.providerData;
-        console.log(userData);
         if (userData) {
           setUser(userData[0]);
         }
@@ -263,7 +261,7 @@ const Setting = ({
               onSubmit={handleSubmitChangePass}
               className="mt-2 border-t pt-2"
             >
-              <h3 className="text-base text-center">
+              <h3 className="text-base text-center mb-3">
                 Nhập mật khẩu đăng nhập mới
               </h3>
               <label htmlFor="passwordUpdate" className="mt-2">

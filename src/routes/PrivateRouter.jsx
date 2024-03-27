@@ -18,7 +18,7 @@ const PrivateRouter = () => {
         <>
           <Sidebar />
           <Header user={user} />
-          <div className="w-[calc(100%-320px)] ms-[320px] mt-[56px] p-[30px]">
+          <div className="w-[calc(100%-320px)] ms-[320px] mt-[56px] p-[30px] bg-[#eff2f5] h-[calc(100vh-56px)]">
             <Outlet />
           </div>
         </>

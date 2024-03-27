@@ -17,6 +17,7 @@ import CheckOrder from "./pages/user/CheckOrder";
 import Login from "./pages/user/Login";
 import DashBoard from "./pages/admin/DashBoard";
 import NotFoundAdmin from "./pages/admin/NotFound";
+import ListProducts from "./pages/admin/ListProducts";
 
 function App() {
   const location = useLocation();
@@ -50,6 +51,7 @@ function App() {
         <Route path="/admin" element={<PrivateRouter />}>
           <Route index element={<DashBoard />} />
           <Route path="*" element={<NotFoundAdmin />} />
+          <Route path="danh-sach-san-pham" element={<ListProducts />} />
         </Route>
       </Routes>
     </>

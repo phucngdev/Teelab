@@ -1,9 +1,5 @@
 export const navList = [
   {
-    text: "Tất cả sản phẩm",
-    link: "/tat-ca-san-pham",
-  },
-  {
     text: "Áo thun",
     link: "/ao-thun",
   },
