@@ -7,7 +7,7 @@ import {
   upDateData,
 } from "../../services/crud.service";
 
-const postSlice = createSlice({
+const crudSlice = createSlice({
   name: "crud",
   initialState: {
     data: [],
@@ -77,4 +77,4 @@ const postSlice = createSlice({
   },
 });
 
-export default postSlice.reducer;
+export default crudSlice.reducer;

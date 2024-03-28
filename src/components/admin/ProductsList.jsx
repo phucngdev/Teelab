@@ -23,7 +23,6 @@ const ProductsList = ({ data }) => {
   const memoData = useMemo(() => {
     return dataFirebase && setProducts(Object.values(dataFirebase));
   }, [data]);
-  console.log(products);
 
   const CheckboxGroup = Checkbox.Group;
   const [checkedList, setCheckedList] = useState([]);

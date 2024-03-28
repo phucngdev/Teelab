@@ -1,23 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { findAllData } from "../../../../services/crud.service";
+import { findAllBanner } from "../../../../services/banner.service";
 import { Carousel, Skeleton } from "antd";
 
 const Banner = () => {
   const dispatch = useDispatch();
-  const dataBanner = useSelector((state) => state.crud.data);
-  const [banner, setBanner] = useState();
-  const [loading, setLoading] = useState(true);
+  const dataBanner = useSelector((state) => state.banner.data);
+  const [banner, setBanner] = useState([]);
   console.log("banner", banner);
 
   const loadDataBanner = async () => {
-    try {
-      await dispatch(findAllData("banner"));
-    } catch (error) {
-      console.error("Error loading banner:", error);
-    } finally {
-      setLoading(false);
-    }
+    await dispatch(findAllBanner());
   };
 
   useEffect(() => {
@@ -26,18 +19,14 @@ const Banner = () => {
 
   useEffect(() => {
     if (dataBanner) {
-      const arr = Object.values(dataBanner);
-      setBanner(arr);
+      const data = Object.values(dataBanner);
+      setBanner(data);
     }
   }, [dataBanner]);
 
   return (
     <>
-      {loading ? (
-        <div className="flex justify-center">
-          <Skeleton.Image />
-        </div>
-      ) : (
+      {banner ? (
         <div className="w-[85%] mx-auto">
           <Carousel autoplay>
             {banner?.map((bn, index) => (
@@ -49,6 +38,10 @@ const Banner = () => {
               />
             ))}
           </Carousel>
+        </div>
+      ) : (
+        <div className="flex justify-center">
+          <Skeleton.Image />
         </div>
       )}
     </>
