@@ -3,7 +3,7 @@ import React, { useMemo, useState } from "react";
 const IconOption = ({ item, setOptionFocus, setSelected }) => {
   const [option, setOption] = useState([]);
   const memoData = useMemo(() => {
-    return item && setOption(Object.values(item?.imgIcon));
+    return item.imgIcon && setOption(Object.values(item?.imgIcon));
   }, [item]);
   const handleChangeOptionFocus = (url) => {
     setOptionFocus(url);
